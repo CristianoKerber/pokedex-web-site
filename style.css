@@ -323,7 +323,7 @@ footer {
     color: #555;
 }
 
-.normal   { background: radial-gradient(circle at top, white, gray); }
+.normal   { background: radial-gradient(circle at top, #c8c8a8, #888870); }
 .fogo     { background: radial-gradient(circle at top, khaki, orangered); }
 .agua     { background: radial-gradient(circle at top, rgb(122,176,228), rgb(5,91,172)); }
 .grama    { background: radial-gradient(circle at top, limegreen, seagreen); }
@@ -432,3 +432,19 @@ footer {
     65%  { transform: translateY(-6px); }
     100% { transform: translateY(0px);  }
 }
+
+.pedra-terra   { background: linear-gradient(to right, brown, chocolate); }
+.agua-gelo     { background: linear-gradient(to right, rgb(5,91,172), lightskyblue); }
+.pedra-agua    { background: linear-gradient(to right, brown, rgb(5,91,172)); }
+.lutador-psiquico { background: linear-gradient(to right, darkred, palevioletred); }
+.grama-psiquico   { background: linear-gradient(to right, seagreen, palevioletred); }
+.agua-psiquico    { background: linear-gradient(to right, rgb(5,91,172), palevioletred); }
+.fogo-pedra    { background: linear-gradient(to right, orangered, brown); }
+.fantasma-veneno  { background: linear-gradient(to right, indigo, purple); }
+.psiquico-voador  { background: linear-gradient(to right, palevioletred, steelblue); }
+.gelo-psiquico    { background: linear-gradient(to right, lightskyblue, palevioletred); }
+.dragao-voador    { background: linear-gradient(to right, darkblue, steelblue); }
+.agua-voador      { background: linear-gradient(to right, rgb(5,91,172), paleturquoise); }
+
+.eletrico-aco  { background: linear-gradient(to right, orange, lightsteelblue); }
+.terra-pedra   { background: linear-gradient(to right, chocolate, brown); }

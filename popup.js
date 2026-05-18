@@ -58,6 +58,20 @@ const GRADIENTE_POR_CLASSE = {
     "terra-veneno":   "linear-gradient(to right, chocolate, purple)",
     "voador-veneno":  "linear-gradient(to right, paleturquoise, purple)",
     "grama-inseto":   "linear-gradient(to right, limegreen, olivedrab)",
+    "pedra-terra":    "linear-gradient(to right, brown, chocolate)",
+    "agua-gelo":      "linear-gradient(to right, rgb(5,91,172), lightskyblue)",
+    "pedra-agua":     "linear-gradient(to right, brown, rgb(5,91,172))",
+    "lutador-psiquico":"linear-gradient(to right, darkred, palevioletred)",
+    "grama-psiquico": "linear-gradient(to right, seagreen, palevioletred)",
+    "agua-psiquico":  "linear-gradient(to right, rgb(5,91,172), palevioletred)",
+    "fogo-pedra":     "linear-gradient(to right, orangered, brown)",
+    "fantasma-veneno":"linear-gradient(to right, indigo, purple)",
+    "psiquico-voador":"linear-gradient(to right, palevioletred, steelblue)",
+    "gelo-psiquico":  "linear-gradient(to right, lightskyblue, palevioletred)",
+    "dragao-voador":  "linear-gradient(to right, darkblue, steelblue)",
+    "agua-voador":    "linear-gradient(to right, rgb(5,91,172), paleturquoise)",
+    "eletrico-aco":   "linear-gradient(to right, orange, lightsteelblue)",
+    "terra-pedra":    "linear-gradient(to right, chocolate, brown)",
 };
 
 const STAT_MAX = 255;
@@ -127,12 +141,10 @@ function fecharPopup() {
     document.body.style.overflow = "";
 
     setTimeout(() => {
-        popupImg.src         = "";
-        popupStats.innerHTML = "";
+        popupImg.src               = "";
+        popupStats.innerHTML       = "";
         popupCard.style.background = "";
-        pokemonAtual         = null;
-        tabBase.classList.add("active");
-        tab3D.classList.remove("active");
+        pokemonAtual               = null;
     }, 280);
 }
 

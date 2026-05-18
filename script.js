@@ -1,4 +1,4 @@
-const TOTAL_POKEMON = 50;
+const TOTAL_POKEMON = 151;
 const API_BASE      = "https://pokeapi.co/api/v2/pokemon";
 
 const TIPO_ICONE = {
@@ -19,7 +19,7 @@ const TIPO_ICONE = {
     ice:      "img/Gelo.webp",
     dragon:   "img/Dragao.webp",
     dark:     "img/Sombrio.webp",
-    steel:    "img/Aco.webp",
+    steel:    "img/steel.png",
 };
 
 const TIPO_CLASSE = {
@@ -47,6 +47,28 @@ function gerarClasseCor(tipos) {
     return tipos.map(t => TIPO_CLASSE[t] || t).join("-");
 }
 
+const CLASSES_VALIDAS = new Set([
+    "normal","fogo","agua","grama","eletrico","gelo","lutador","veneno",
+    "terra","voador","psiquico","inseto","pedra","fada","fantasma","dragao",
+    "sombrio","aco",
+    "grama-veneno","fogo-voador","inseto-voador","inseto-veneno","normal-voador",
+    "veneno-terra","fada-normal","veneno-voador","inseto-grama",
+    "normal-fada","voador-fogo","voador-inseto","veneno-inseto","voador-normal",
+    "terra-veneno","voador-veneno","grama-inseto",
+    "pedra-terra","agua-gelo","pedra-agua","lutador-psiquico","grama-psiquico",
+    "agua-psiquico","fogo-pedra","fantasma-veneno","psiquico-voador",
+    "gelo-psiquico","dragao-voador","agua-voador","eletrico-aco","terra-pedra",
+]);
+
+function aplicarCorFallback(card, tipos) {
+    const classe = gerarClasseCor(tipos);
+    if (!CLASSES_VALIDAS.has(classe)) {
+        const primario = TIPO_CLASSE[tipos[0]] || tipos[0];
+        card.classList.remove(classe);
+        card.classList.add(primario);
+    }
+}
+
 function formatarNumero(n) {
     return String(n).padStart(3, "0");
 }
@@ -60,6 +82,7 @@ function criarCard(pokemon) {
 
     const card = document.createElement("div");
     card.classList.add("card", classe);
+    setTimeout(() => aplicarCorFallback(card, tipos), 0);
     card.dataset.nome      = nome.toLowerCase();
     card.dataset.pokemonId = pokemon.id;
     card.dataset.tipos     = tipos.join(",");
