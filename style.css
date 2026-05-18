@@ -448,3 +448,77 @@ footer {
 
 .eletrico-aco  { background: linear-gradient(to right, orange, lightsteelblue); }
 .terra-pedra   { background: linear-gradient(to right, chocolate, brown); }
+
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 24px 16px;
+    }
+
+    .header-logo { height: 70px; }
+
+    .search-bar { width: 280px; }
+}
+
+@media (max-width: 720px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 16px 12px;
+    }
+
+    header {
+        padding: 8px 14px;
+    }
+
+    .header-logo {
+        height: 54px;
+        margin-left: 0;
+    }
+
+    .search-bar {
+        width: 200px;
+        font-size: 11px;
+    }
+
+    .search-bar::before { font-size: 9px; padding: 2px 6px; }
+    .search-input       { font-size: 11px; padding: 3px 8px; }
+
+    .header-nav { gap: 12px; }
+
+    .nav-label  { font-size: 11px; }
+
+    .popup-card { width: 92vw; max-width: 340px; }
+
+    .login-card { width: 90vw; max-width: 340px; }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 12px 8px;
+    }
+
+    .search-bar { display: none; }
+
+    .header-logo { height: 46px; }
+
+    .nav-hover-btn,
+    .login-header-btn { padding: 2px 4px; }
+
+    .nav-label { font-size: 10px; }
+
+    .img_pokemon { width: 80px; height: 80px; }
+
+    .card-name { font-size: 11px; }
+
+    .type-icon { width: 22px; height: 22px; }
+
+    .popup-card  { width: 95vw; padding: 70px 16px 24px; }
+    .popup-img   { width: 160px; height: 160px; top: -100px; }
+
+    .login-card  { width: 95vw; }
+}
