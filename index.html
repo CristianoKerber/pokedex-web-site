@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missingmon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="header-sticky">
+    <header>
+        <img src="img/pokedex-logo.png" alt="Logo Missingmon" class="header-logo">
+
+        
+        <div class="search-bar">
+            <div class="search-inner">
+                <input type="text" placeholder="Pesquisar" class="search-input" id="searchInput">
+                <button class="search-btn" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="header-nav">
+            
+            <button class="nav-hover-btn" id="navFavBtn">
+                <svg class="nav-hover-icon" width="36" height="36" viewBox="0 0 36 36"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g class="nav-hover-g">
+                        <image href="img/favorite-icon-button.png" x="4" y="4" width="28" height="28"
+                            style="image-rendering:pixelated"/>
+                    </g>
+                </svg>
+                <span class="nav-label nav-label--yellow">Favorito</span>
+            </button>
+            <button class="login-header-btn" id="navLoginBtn">
+                <svg class="login-header-icon" width="36" height="36" viewBox="0 0 36 36"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g class="lhi-user">
+                        <circle cx="18" cy="13" r="6" fill="#9b6ec8"/>
+                        <path d="M6 32c0-6.627 5.373-12 12-12s12 5.373 12 12" fill="#9b6ec8"/>
+                    </g>
+                </svg>
+                <span id="navLoginLabel" class="nav-label nav-label--purple">Login</span>
+            </button>
+        </nav>
+    </header>
+    </div>
+
+    <main>
+        <div class="main-bg">
+            <div class="container" id="pokedex-container">
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Sobre nós</p>
+    </footer>
+
+    
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-card" id="popupCard">
+
+            <img src="" alt="" class="popup-img" id="popupImg">
+
+            <button class="popup-fav" id="popupFav" aria-label="Favoritar">
+                <img src="img/favorite-icon-button.png" alt="Favoritar" class="popup-fav-img" id="popupFavImg">
+            </button>
+            <button class="popup-close" id="popupClose" aria-label="Fechar">&#10005;</button>
+
+            <div class="popup-stats" id="popupStats"></div>
+
+        </div>
+    </div>
+
+    
+    <div class="login-overlay" id="overlayLogin">
+        <div class="login-card">
+
+            
+            <div class="login-titlebar">
+                <button class="login-titlebar-close" onclick="fecharLogin()">&#10005;</button>
+                <span class="login-titlebar-title">Login</span>
+            </div>
+
+            <div class="login-screen">
+                <div class="login-avatar">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+                        stroke="#1a4a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="7" r="4"/>
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    </svg>
+                </div>
+                <div class="login-fields">
+                    <div class="login-field">
+                        <span class="login-field-label">Usuário</span>
+                        <input type="text" id="inputUser" placeholder="Digite seu usuário"
+                            onkeydown="if(event.key==='Enter') fazerLogin()">
+                    </div>
+                </div>
+                <p class="login-error" id="loginError"></p>
+            </div>
+
+            <div class="login-buttons">
+                <button class="login-btn login-btn-primary" onclick="fazerLogin()">ENTRAR</button>
+                <button class="login-btn" onclick="abrirRegister()">REGISTRAR</button>
+            </div>
+
+            
+            <div class="login-gameboy-dots">
+                <span></span><span></span><span></span>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div class="login-overlay" id="overlayRegister">
+        <div class="login-card">
+
+            <div class="login-titlebar">
+                <button class="login-titlebar-close" onclick="fecharRegister()">&#10005;</button>
+                <span class="login-titlebar-title">Cadastro</span>
+            </div>
+
+            <div class="login-screen">
+                <div class="login-avatar">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+                        stroke="#1a4a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="7" r="4"/>
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    </svg>
+                </div>
+                <div class="login-fields">
+                    <div class="login-field">
+                        <span class="login-field-label">Nome</span>
+                        <input type="text" id="regNome" placeholder="Seu nome completo">
+                    </div>
+                    <div class="login-field">
+                        <span class="login-field-label">Usuário</span>
+                        <input type="text" id="regUser" placeholder="Escolha um usuário">
+                    </div>
+                </div>
+                <p class="login-error" id="registerError"></p>
+            </div>
+
+            <div class="login-buttons">
+                <button class="login-btn login-btn-primary" onclick="fazerCadastro()">CRIAR</button>
+                <button class="login-btn" onclick="fecharRegister(); abrirLogin()">VOLTAR</button>
+            </div>
+
+            <div class="login-gameboy-dots">
+                <span></span><span></span><span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+
+</body>
+</html>
