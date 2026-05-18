@@ -9,7 +9,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* ── Labels do nav com glow ───────────────────────────────── */
+
         .nav-hover-btn .nav-label,
         .login-header-btn .nav-label {
             color: #50a0ff;
@@ -24,7 +24,6 @@
                 0 0 14px rgba(248,194,0,0.5);
         }
 
-        /* Login label amarelo igual ao favorito */
         .login-header-btn #navLoginLabel {
             color: #50a0ff;
         }
@@ -35,7 +34,6 @@
                 0 0 14px rgba(248,194,0,0.5);
         }
 
-        /* Ícone do login (SVG) vira amarelo no hover */
         .login-header-btn:hover .lhi-user circle,
         .login-header-btn:hover .lhi-user path {
             fill: #f8c200;
@@ -53,7 +51,6 @@
             overflow: hidden;
         }
 
-        /* ── Cena de batalha ──────────────────────────────────────── */
         .battle-scene {
             flex: 1;
             position: relative;
@@ -70,7 +67,7 @@
             justify-content: center;
         }
 
-        /* Scanlines */
+
         .battle-scene::before {
             content: "";
             position: absolute;
@@ -84,7 +81,6 @@
             z-index: 0;
         }
 
-        /* Plataforma central */
         .platform-center {
             position: absolute;
             bottom: 28%;
@@ -98,7 +94,6 @@
             z-index: 1;
         }
 
-        /* ── Pokémon centralizado ─────────────────────────────────── */
         .pokemon-center {
             position: relative;
             z-index: 2;
@@ -124,7 +119,6 @@
             transform: translateX(-50px);
         }
 
-        /* ── Card de status (topo esquerdo) ───────────────────────── */
         .status-enemy {
             position: absolute;
             top: 12px;
@@ -146,7 +140,7 @@
         }
         .poke-name  { font-size: 14px; font-weight: 900; color: #111; letter-spacing: 0.05em; }
 
-        /* Botão desfavoritar no card */
+
         .btn-desfav {
             background: none;
             border: none;
@@ -164,11 +158,11 @@
             background: none !important;
             border-radius: 0 !important;
             padding: 0 !important;
-            filter: sepia(1) saturate(6) hue-rotate(5deg) brightness(1.1); /* amarelo */
+            filter: sepia(1) saturate(6) hue-rotate(5deg) brightness(1.1);
             transition: filter 0.2s;
         }
         .btn-desfav.removido img {
-            filter: brightness(0) invert(1); /* branco */
+            filter: brightness(0) invert(1);
         }
         .poke-level { font-size: 12px; font-weight: 700; color: #333; }
         .hp-row { display: flex; align-items: center; gap: 6px; }
@@ -187,7 +181,6 @@
             transition: width 0.5s ease;
         }
 
-        /* ── Botões carrossel laterais ────────────────────────────── */
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -211,7 +204,6 @@
         .carousel-btn.prev  { left: 12px; }
         .carousel-btn.next  { right: 12px; }
 
-        /* Dots de pokémon */
         .poke-dots {
             position: absolute;
             top: 12px;
@@ -230,7 +222,6 @@
         }
         .poke-dot.active { background: #f8c200; border-color: #e6a800; }
 
-        /* ── Card de stats VERTICAL embaixo ───────────────────────── */
         .stats-bottom {
             position: relative;
             background: #1a3a5c;
@@ -250,7 +241,6 @@
             z-index: 0;
         }
 
-        /* Texto do pokémon (esquerda) */
         .dialog-text {
             flex: 1;
             font-size: 15px;
@@ -264,7 +254,6 @@
         }
         .dialog-text span { color: #f8c200; }
 
-        /* Card de stat (direita, em pé — vertical) */
         .stat-card-vertical {
             background: #f0ead8;
             border: 3px solid #333;
@@ -345,7 +334,6 @@
         }
         .stat-dot.active { background: #e6a800; border-color: #a07000; }
 
-        /* Botões do nav animados (home e favorito) */
         .nav-hover-btn {
             background: none;
             border: none;
@@ -372,7 +360,6 @@
             100% { transform: translateY(0px);  }
         }
 
-        /* Remove borda/fundo herdado do nav-icon nos ícones do nav */
         .nav-hover-icon image,
         .nav-hover-icon img {
             background: none !important;
@@ -380,7 +367,6 @@
             padding: 0 !important;
         }
 
-        /* Tipos no card de nome */
         .poke-types {
             display: flex;
             gap: 5px;
