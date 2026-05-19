@@ -208,7 +208,7 @@ window.atualizarTodosFavs = function() {
         const salvos   = logado && usuarios[logado] ? (usuarios[logado].salvos || []) : [];
         const salvo    = salvos.includes(id);
         btn.classList.toggle("card-fav--salvo", salvo);
-        img.style.opacity = salvo ? "1" : "0.5";
+        img.style.opacity = salvo ? "1" : "0.3";
     });
 };
 
