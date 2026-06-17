@@ -225,15 +225,6 @@ function renderizarStats(stats) {
     });
 }
 
-function mostrarArteOficial() {
-    trocarImagem("oficial");
-    popupStats.innerHTML = `
-        <p class="msg-3d">
-            Arte oficial do pokémon.<br>
-            <small>Clique em BASE para voltar às stats.</small>
-        </p>`;
-}
-
 document.getElementById("popupFav").addEventListener("click", toggleFavPopup);
 
 overlay.addEventListener("click", (e) => { if (e.target === overlay) fecharPopup(); });
