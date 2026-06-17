@@ -401,7 +401,7 @@ footer {
 }
 
 .card-fav--salvo .card-fav-img {
-    filter: none sepia(1) saturate(4) hue-rotate(0deg);
+    filter: brightness(0) saturate(100%) invert(18%) sepia(96%) saturate(2000%) hue-rotate(350deg);
     opacity: 1 !important;
 }
 

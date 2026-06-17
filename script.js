@@ -1,4 +1,4 @@
-const TOTAL_POKEMON = 151;
+const TOTAL_POKEMON = 1025;
 const API_BASE      = "https://pokeapi.co/api/v2/pokemon";
 
 const TIPO_ICONE = {
@@ -180,14 +180,19 @@ async function buscarPokemon(id) {
 
 async function carregarPokedex() {
     const container = document.getElementById("pokedex-container");
+    const BATCH_SIZE = 30;
     const ids = Array.from({ length: TOTAL_POKEMON }, (_, i) => i + 1);
-    const resultados = await Promise.allSettled(ids.map(buscarPokemon));
 
-    resultados.forEach(resultado => {
-        if (resultado.status === "fulfilled") {
-            container.appendChild(criarCard(resultado.value));
-        }
-    });
+    for (let i = 0; i < ids.length; i += BATCH_SIZE) {
+        const lote = ids.slice(i, i + BATCH_SIZE);
+        const resultados = await Promise.allSettled(lote.map(buscarPokemon));
+
+        resultados.forEach(resultado => {
+            if (resultado.status === "fulfilled") {
+                container.appendChild(criarCard(resultado.value));
+            }
+        });
+    }
 }
 
 document.getElementById("searchInput").addEventListener("input", function () {
